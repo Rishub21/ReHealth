@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Trader</title>
+
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="trader.css">
+    </head>
+
+
+    <body>
+      <h3> User dash  for </h3>
+      <h1> {{ initial_name }}</h1>
+
+
+   <form action = "" method = "POST">
+    {% csrf_token %}
+      {% if initial_feedback %}
+
+       {% for key, value in initial_feedback.items %}
+          {% if key == "Medicine" %}
+            <table class = "striped">
+              <tr>
+                <th>Medication</th>
+              </tr>
+
+                <td> {{value}}</td>
+
+
+          {% endif %}
+        {% endfor %}
+
+
+
+        {% for key, value in initial_feedback.items %}
+           {% if key == "Diet & Excercise" %}
+             <table class = "striped">
+               <tr>
+                 <th>Diet & Exercise</th>
+               </tr>
+                   <td>{{ value }}</td>
+           {% endif %}
+         {% endfor %}
+
+
+
+         {% for key, value in initial_feedback.items %}
+            {% if key == "Other" %}
+              <table class = "striped">
+                <tr>
+                  <th>Other</th>
+                </tr>
+                    <td>{{ value }}</td>
+            {% endif %}
+          {% endfor %}
+
+
+        {% else %}
+          <h1> NO FEEDBACK YET </h1>
+      {% endif %}
+
+  </form>
+    </body>

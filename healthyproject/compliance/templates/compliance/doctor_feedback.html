@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Trader</title>
+
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="trader.css">
+        <script>
+        $(document).ready(function() {
+          $('select').material_select();
+        });
+        </script>
+    </head>
+
+
+    <body>
+
+      <form action = "" method = "POST" class="col s12">
+                      {% csrf_token %}
+                        <div class="row">
+                          <div class="input-field col s12">
+
+                                <select name = "dropdown">
+                                  <option value="" disabled selected> Category advice</option>
+                                  <option value="Medicine">Medicine</option>
+                                  <option value="Diet & Excercise">Diet & Excerise</option>
+                                  <option value="Other">Other</option>
+                                </select>
+
+                          </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s7">
+                                  <input value = "" name = "Patient-feedback" id="Patient-feedback" type="text" class="validate" >
+                                  <label for="Patient-feedback">Advice</label>
+                            </div>
+                        </div>
+                        <button name = "doctor_feedback" type = "submit" class="waves-effect waves-light btn-large col s5 light-blue lighten-1">Send!</input>
+
+       </form>
+
+    </body>
