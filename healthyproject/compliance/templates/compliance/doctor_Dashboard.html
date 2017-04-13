@@ -23,7 +23,7 @@
 
     <body>
       {% for elem in patient_dict %}
-        <li> <a href = "/compliance/patient_Dashboard/{{ elem }}/"> {{ elem }} </li>
+        <li> <a href = "/compliance/patient_Dashboard/{{ elem }}/"> {{ elem }} </li>  # please start off with this /compliance to make sure it starts new view
       {% endfor %}
 
         <li><a href = "/compliance/patient_Registration/"> Register Patient </li>
